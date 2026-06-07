@@ -1,36 +1,620 @@
-c▶ FJALA IME · YouTube
-ANALIZË POLITIKE · GJIROKASTËR
-Orjana Gjirokastër
-Gazetare · Analiste · Gjirokastër, Shqipëri
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orjana Gjirokastër — Analizë Politike</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=IBM+Plex+Mono:wght@400;500&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #c8102e;
+    --black: #0d0d0d;
+    --white: #f5f0e8;
+    --gray: #2a2a2a;
+    --light-gray: #e8e3db;
+    --accent: #8b0000;
+  }
 
-ANALIZA
-VIDEO
-RRETH MEJE
-DOSJA E ZVËRNECIT · QERSHOR 2026
-Kush janë pronarët e Zvërnecit — dhe çfarë nuk tregon narrativa zyrtare
-Partia shpërndan lajmin se "Ivanka u tërhoq". Dokumentet zyrtare tregojnë diçka tjetër. Dhe shqiptarët nuk dolën në shesh për një amerikane — por për diçka shumë më të vjetër.
-Nga Orjana Gjirokastër ·
-● MJET I GJALLË · AI
-Pyet mbi pronarët e Zvërnecit
-Bazuar në dokumentet e QKB, ASK dhe raportimet ndërkombëtare
-01
-Kush janë pronarët e tokës në Zvërnec sipas dokumenteve zyrtare?
-02
-A u tërhoq Ivanka Trump — apo është dezinformim?
-03
-Pse dolën shqiptarët në shesh — për Ivankën apo për diçka tjetër?
-04
-Çfarë është Affinity Partners dhe si lidhet me projektin?
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-→ PYET
-Të dhëna: Qendra Kombëtare e Biznesit · Agjencia Shtetërore e Kadastrës · Media ndërkombëtare · 7 qershor 2026
-KONTEKSTI
-Narrativa që qarkullon — se Ivanka Trump "u tërhoq" dhe do të investojë diku tjetër — nuk konfirmohet nga asnjë burim zyrtar, as nga Affinity Partners, as nga qeveria shqiptare, as nga mediat ndërkombëtare deri më 7 qershor 2026. Rama tha publikisht: "Nuk ka asnjë shans që investimi të ndalojë sa të jem unë këtu."
-"Shqiptarët nuk dolën në shesh për një amerikane. Dolën kundër mënyrës sesi u dha toka, kundër ligjeve të ndryshuara natën, kundër gardhit me tela me gjemba."
-Pronare formale e tokës është kompania Albania Land Development, e regjistruar më 27 maj 2025. Pronarë përfitues sipas QKB: vëllezërit kataras Mohamad Moataz dhe Ramez Alkhayyat, secili me 50%. Lidhja me Kushner-Ivanka vjen nëpërmjet Affinity Partners — jo si pronarë direktë në dokumentet shqiptare, por si palë operuese e projektit.
-Protestuesit nxituan në rrugë pas videos virale të aktivistit të tërhequr nga sigurimi privat, pas gardhinit me tela me gjemba që priti akseset publike, dhe pas ndryshimeve ligjore të 2024 që hapën zonat e mbrojtura për ndërtim luksi "5 yje e lart". SPAK ka hapur hetim.
-Orjana Gjirokastër
-Gazetare · Analiste Politike · Gjirokastër
-▶ FJALA IME · YOUTUBE
-INSTAGRAM
-KONTAKT
+  body {
+    background: var(--white);
+    color: var(--black);
+    font-family: 'Lora', serif;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--black);
+    padding: 0;
+    border-bottom: 3px solid var(--red);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 32px;
+    border-bottom: 1px solid #2a2a2a;
+  }
+
+  .date-line {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: #666;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .youtube-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--red);
+    text-decoration: none;
+    letter-spacing: 2px;
+    border: 1px solid var(--red);
+    padding: 4px 10px;
+    transition: all 0.2s;
+  }
+  .youtube-link:hover { background: var(--red); color: #fff; }
+
+  .header-main {
+    padding: 32px 32px 28px;
+    position: relative;
+  }
+
+  .masthead-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: var(--red);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  h1.masthead {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 7vw, 72px);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 0.95;
+    letter-spacing: -1px;
+  }
+
+  h1.masthead span {
+    color: var(--red);
+  }
+
+  .masthead-sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: #555;
+    margin-top: 10px;
+    letter-spacing: 1px;
+  }
+
+  .red-bar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--red);
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--red);
+    padding: 10px 32px;
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+
+  nav a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  nav a:hover, nav a.active { color: #fff; }
+  nav a.active { border-bottom: 1px solid #fff; padding-bottom: 1px; }
+
+  /* ── MAIN CONTENT ── */
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+  }
+
+  /* ── ARTICLE INTRO ── */
+  .article-header {
+    border-bottom: 2px solid var(--black);
+    padding-bottom: 28px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .article-kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--red);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .article-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 4vw, 38px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .article-deck {
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    font-style: italic;
+    border-left: 3px solid var(--red);
+    padding-left: 16px;
+    margin-bottom: 16px;
+  }
+
+  .byline {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: #888;
+    letter-spacing: 1px;
+  }
+
+  /* ── AI TOOL ── */
+  .ai-section {
+    background: var(--black);
+    color: var(--white);
+    padding: 32px;
+    margin: 32px 0;
+    position: relative;
+    animation: fadeUp 0.8s ease 0.2s both;
+  }
+
+  .ai-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--red);
+  }
+
+  .ai-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: var(--red);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .ai-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .ai-desc {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: #555;
+    margin-bottom: 24px;
+  }
+
+  /* Questions */
+  .questions-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .q-btn {
+    background: transparent;
+    border: 1px solid #2a2a2a;
+    color: #aaa;
+    padding: 12px 16px;
+    text-align: left;
+    cursor: pointer;
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    line-height: 1.4;
+    transition: all 0.2s;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .q-btn:hover {
+    border-color: var(--red);
+    color: var(--white);
+  }
+
+  .q-btn.active {
+    border-color: var(--red);
+    background: #1a0505;
+    color: var(--white);
+  }
+
+  .q-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--red);
+    min-width: 20px;
+    margin-top: 2px;
+  }
+
+  /* Custom input */
+  .custom-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    border-top: 1px solid #1f1f1f;
+    padding-top: 18px;
+  }
+
+  .custom-input {
+    flex: 1;
+    background: #0a0a0a;
+    border: 1px solid #2a2a2a;
+    color: var(--white);
+    padding: 11px 14px;
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .custom-input:focus { border-color: var(--red); }
+  .custom-input::placeholder { color: #444; }
+
+  .ask-btn {
+    background: var(--red);
+    border: none;
+    color: #fff;
+    padding: 11px 20px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .ask-btn:hover { background: var(--accent); }
+  .ask-btn:disabled { background: #333; cursor: default; }
+
+  /* Answer box */
+  .answer-box {
+    border: 1px solid #2a2a2a;
+    border-left: 3px solid var(--red);
+    padding: 20px;
+    display: none;
+  }
+  .answer-box.visible { display: block; }
+
+  .answer-question {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: #555;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #1f1f1f;
+  }
+
+  .answer-text {
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #d8d0c0;
+    white-space: pre-wrap;
+  }
+
+  .loading-dot {
+    display: inline-block;
+    width: 7px; height: 7px;
+    background: var(--red);
+    border-radius: 50%;
+    animation: blink 1s infinite;
+    margin-right: 10px;
+  }
+
+  .loading-text {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: #555;
+  }
+
+  .ai-footer {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: #333;
+    border-top: 1px solid #1f1f1f;
+    padding-top: 14px;
+    margin-top: 20px;
+  }
+
+  /* ── CONTEXT ARTICLE ── */
+  .context-section {
+    animation: fadeUp 0.8s ease 0.4s both;
+  }
+
+  .section-rule {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .section-rule span {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--red);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .section-rule::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--black);
+  }
+
+  .context-text {
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 16px;
+  }
+
+  .pull-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--black);
+    border-top: 2px solid var(--red);
+    border-bottom: 1px solid var(--light-gray);
+    padding: 20px 0;
+    margin: 28px 0;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black);
+    border-top: 3px solid var(--red);
+    padding: 28px 32px;
+    text-align: center;
+  }
+
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .footer-name span { color: var(--red); }
+
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 14px;
+  }
+
+  .footer-links a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #555;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--red); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.15; }
+  }
+
+  @media (max-width: 600px) {
+    .header-top { padding: 12px 18px; }
+    .header-main { padding: 24px 18px 20px; }
+    nav { padding: 10px 18px; gap: 18px; }
+    main { padding: 28px 18px 48px; }
+    .ai-section { padding: 22px 18px; }
+    footer { padding: 24px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <div class="date-line" id="dateDisplay"></div>
+    <a href="https://www.youtube.com/@fjalaime.2023" target="_blank" class="youtube-link">▶ FJALA IME · YouTube</a>
+  </div>
+  <div class="header-main">
+    <div class="masthead-label">Analizë Politike · Gjirokastër</div>
+    <h1 class="masthead">Orjana<br><span>Gjirokastër</span></h1>
+    <div class="masthead-sub">Gazetare · Analiste · Gjirokastër, Shqipëri</div>
+    <div class="red-bar"></div>
+  </div>
+</header>
+
+<nav>
+  <a href="#" class="active">Analiza</a>
+  <a href="https://www.youtube.com/@fjalaime.2023" target="_blank">Video</a>
+  <a href="#">Rreth meje</a>
+</nav>
+
+<main>
+
+  <div class="article-header">
+    <div class="article-kicker">Dosja e Zvërnecit · Qershor 2026</div>
+    <h2 class="article-title">Kush janë pronarët e Zvërnecit — dhe çfarë nuk tregon narrativa zyrtare</h2>
+    <p class="article-deck">Partia shpërndan lajmin se "Ivanka u tërhoq". Dokumentet zyrtare tregojnë diçka tjetër. Dhe shqiptarët nuk dolën në shesh për një amerikane — por për diçka shumë më të vjetër.</p>
+    <div class="byline">Nga Orjana Gjirokastër · <span id="articleDate"></span></div>
+  </div>
+
+  <!-- AI TOOL -->
+  <div class="ai-section">
+    <div class="ai-label">● Mjet i gjallë · AI</div>
+    <div class="ai-title">Pyet mbi pronarët e Zvërnecit</div>
+    <div class="ai-desc">Bazuar në dokumentet e QKB, ASK dhe raportimet ndërkombëtare</div>
+
+    <div class="questions-grid">
+      <button class="q-btn" onclick="askQuestion(this, 'Kush janë pronarët e tokës në Zvërnec sipas dokumenteve zyrtare shqiptare?')">
+        <span class="q-num">01</span>
+        <span>Kush janë pronarët e tokës në Zvërnec sipas dokumenteve zyrtare?</span>
+      </button>
+      <button class="q-btn" onclick="askQuestion(this, 'A është e vërtetë që Ivanka Trump u tërhoq nga projekti i Zvërnecit dhe do të investojë në Mykonos?')">
+        <span class="q-num">02</span>
+        <span>A u tërhoq Ivanka Trump — apo është dezinformim?</span>
+      </button>
+      <button class="q-btn" onclick="askQuestion(this, 'Pse dolën shqiptarët në protestë për Zvërnecin — a ishte shkak Ivanka Trump apo kishte arsye të tjera më të thella?')">
+        <span class="q-num">03</span>
+        <span>Pse dolën shqiptarët në shesh — për Ivankën apo për diçka tjetër?</span>
+      </button>
+      <button class="q-btn" onclick="askQuestion(this, 'Çfarë është Affinity Partners dhe cila është lidhja e saj me projektin e Zvërnecit?')">
+        <span class="q-num">04</span>
+        <span>Çfarë është Affinity Partners dhe si lidhet me projektin?</span>
+      </button>
+    </div>
+
+    <div class="custom-row">
+      <input class="custom-input" id="customQ" placeholder="Shkruaj pyetjen tënde..." onkeydown="if(event.key==='Enter') sendCustom()">
+      <button class="ask-btn" id="askBtn" onclick="sendCustom()">→ PYET</button>
+    </div>
+
+    <div class="answer-box" id="answerBox">
+      <div class="answer-question" id="answerQuestion"></div>
+      <div class="answer-text" id="answerText"></div>
+    </div>
+
+    <div class="ai-footer">
+      Të dhëna: Qendra Kombëtare e Biznesit · Agjencia Shtetërore e Kadastrës · Media ndërkombëtare · 7 qershor 2026
+    </div>
+  </div>
+
+  <!-- CONTEXT -->
+  <div class="context-section">
+    <div class="section-rule"><span>Konteksti</span></div>
+
+    <p class="context-text">
+      Narrativa që qarkullon — se Ivanka Trump "u tërhoq" dhe do të investojë diku tjetër — nuk konfirmohet nga asnjë burim zyrtar, as nga Affinity Partners, as nga qeveria shqiptare, as nga mediat ndërkombëtare deri më 7 qershor 2026. Rama tha publikisht: <em>"Nuk ka asnjë shans që investimi të ndalojë sa të jem unë këtu."</em>
+    </p>
+
+    <div class="pull-quote">
+      "Shqiptarët nuk dolën në shesh për një amerikane. Dolën kundër mënyrës sesi u dha toka, kundër ligjeve të ndryshuara natën, kundër gardhit me tela me gjemba."
+    </div>
+
+    <p class="context-text">
+      Pronare formale e tokës është kompania <strong>Albania Land Development</strong>, e regjistruar më 27 maj 2025. Pronarë përfitues sipas QKB: vëllezërit kataras <strong>Mohamad Moataz</strong> dhe <strong>Ramez Alkhayyat</strong>, secili me 50%. Lidhja me Kushner-Ivanka vjen nëpërmjet <strong>Affinity Partners</strong> — jo si pronarë direktë në dokumentet shqiptare, por si palë operuese e projektit.
+    </p>
+
+    <p class="context-text">
+      Protestuesit nxituan në rrugë pas videos virale të aktivistit të tërhequr nga sigurimi privat, pas gardhinit me tela me gjemba që priti akseset publike, dhe pas ndryshimeve ligjore të 2024 që hapën zonat e mbrojtura për ndërtim luksi "5 yje e lart". SPAK ka hapur hetim.
+    </p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-name">Orjana <span>Gjirokastër</span></div>
+  <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:#444; margin-top:4px; letter-spacing:1px;">Gazetare · Analiste Politike · Gjirokastër</div>
+  <div class="footer-links">
+    <a href="https://www.youtube.com/@fjalaime.2023" target="_blank">▶ Fjala Ime · YouTube</a>
+    <a href="#">Instagram</a>
+    <a href="#">Kontakt</a>
+  </div>
+</footer>
+
+<script>
+  // Date
+  const now = new Date();
+  const opts = { weekday:'long', year:'numeric', month:'long', day:'numeric' };
+  const dateStr = now.toLocaleDateString('sq-AL', opts);
+  document.getElementById('dateDisplay').textContent = dateStr.toUpperCase();
+  document.getElementById('articleDate').textContent = dateStr;
+
+  const SYSTEM = `Ti je analist politik i specializuar për Shqipërinë. Ke njohuri të thella për:
+- Strukturën e pronësisë së projektit të Zvërnecit (Albania Land Development, e regjistruar 27 maj 2025; pronarë përfitues vëllezërit kataras Mohamad Moataz Mhd Ruslan Alkhayat dhe Ramez Mhd Ruslan Alkhayyat, secili 50%; kompania operuese Sazan Real Estate Development LLC; lidhja me Kushner/Ivanka nëpërmjet Affinity Partners)
+- Faktin që deri më 7 qershor 2026 nuk ka asnjë konfirmim zyrtar apo mediatik të besueshëm se Ivanka Trump u tërhoq nga projekti — kjo është dezinformim i pabazuar
+- Protestat shqiptare: shkaktari real ishte videoja virale e protestuesit të tërhequr nga sigurimi privat, gardhi me tela me gjemba, ndryshimet ligjore të 2024 që hapën zonat e mbrojtura
+- Kontekstin e gjerë: SPAK ka hapur hetim, Rama tha "nuk ka shans të ndalojë investimi"
+Përgjigju shkurt, faktikisht, në shqip. Dallo qartë: çfarë dihet nga dokumentet vs çfarë është dezinformim. Thuaj "nuk konfirmohet" kur diçka mungon.`;
+
+  let activeBtn = null;
+
+  async function askQuestion(btn, question) {
+    if (activeBtn) activeBtn.classList.remove('active');
+    activeBtn = btn;
+    btn.classList.add('active');
+    document.getElementById('customQ').value = '';
+    await callAI(question);
+  }
+
+  function sendCustom() {
+    const q = document.getElementById('customQ').value.trim();
+    if (!q) return;
+    if (activeBtn) { activeBtn.classList.remove('active'); activeBtn = null; }
+    callAI(q);
+  }
+
+  async function callAI(question) {
+    const box = document.getElementById('answerBox');
+    const qEl = document.getElementById('answerQuestion');
+    const tEl = document.getElementById('answerText');
+    const btn = document.getElementById('askBtn');
+
+    box.classList.add('visible');
+    qEl.textContent = '▸ ' + question;
+    tEl.innerHTML = '<span class="loading-dot"></span><span class="loading-text">Duke analizuar...</span>';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 1000,
+          system: SYSTEM,
+          messages: [{ role: 'user', content: question }]
+        })
+      });
+      const data = await res.json();
+      const text = data.content?.find(b => b.type === 'text')?.text || 'Gabim në marrjen e përgjigjes.';
+      tEl.textContent = text;
+    } catch(e) {
+      tEl.textContent = 'Gabim teknik. Provo përsëri.';
+    }
+    btn.disabled = false;
+  }
+</script>
+</body>
+</html>
